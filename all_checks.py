@@ -1,17 +1,16 @@
-#!/usr/env/python3
-
+#!/usr/bin/env python3
 import os
 import sys
 
 def check_reboot():
   """Retruns True if the computer has a pending reboot"""
-  return os.path.exist("/run/reboot-required"):
-  
+  return os.path.exists("/run/reboot-required")
+
 def main():
   if check_reboot():
     print("Pending Reboot.")
     sys.exit(1)
-  print("Everythin ok.")
+  print("Everything ok.")
   sys.exit(0)
 
 main()
